@@ -31,72 +31,70 @@
         </form>
 
         <?php
-        // Processamento PHP
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (isset($_POST["option"]) && isset($_POST["value"])) {
                 $option = $_POST["option"];
                 $value = $_POST["value"];
-
-                if ($option === "binary") {
-                    $result = decimalToBinary($value);
-                } else {
-                    $result = decimalToHexaDecimal($value);
-                }
+                $result = $option === "binary" ? decimalToBinary($value) : decimalToHexaDecimal($value);
                 echo "<div class='result-box success'>Resultado: $result</div>";
             } else {
-                echo "<div class='result-box error'>Por favor, prasdencha todos os campos!</div>";
+                echo "<div class='result-box error'>Por favor, preencha todos os campos!</div>";
             }
         }
 
-        function decimalToBinary($numero) {
-            if ($numero == 0){
+        function decimalToBinary(int $number):string
+        {
+            if ($number === 0) {
                 return 0;
-            };
-            $array = [];
-            while ($numero != 0) {
-                $array[] = $numero % 2;
-                $numero = (int) ($numero / 2);
             }
-            return implode(array_reverse($array));
+            ;
+            $binary = [];
+            while ($number != 0) {
+                array_push($binary, $number % 2);
+                $number = (int) ($number / 2);
+            }
+            return implode(array_reverse($binary));
         }
 
-        function decimalToHexaDecimal($number) {
-            if ($number == 0) {
+        function decimalToHexaDecimal(int $number):string
+        {
+            if ($number === 0) {
                 return 0;
-            };
+            }
+
             $array = [];
+            $count = 0;
             $hexadecimal = "";
             while ($number != 0) {
                 array_push($array, $number % 16);
                 $number = (int) ($number / 16);
-            }
-            foreach ($array as $value) {
-                if ($value < 10) {
-                    $hexadecimal .= $value;
+                if ($array[$count] < 10) {
+                    $hexadecimal .= $array[$count];
                 } else {
-                    switch ($value) {
+                    switch ($array[$count]) {
                         case 10:
-                    $hexadecimal .= 'A';
-                    break;
-                case 11:
-                    $hexadecimal .= 'B';
-                    break;
-                case 12:
-                    $hexadecimal .= 'C';
-                    break;
-                case 13:
-                    $hexadecimal .= 'D';
-                    break;
-                case 14:
-                    $hexadecimal .= 'E';
-                    break;
-                case 15:
-                    $hexadecimal .= 'F';
-                    break;
+                            $hexadecimal .= 'A';
+                            break;
+                        case 11:
+                            $hexadecimal .= 'B';
+                            break;
+                        case 12:
+                            $hexadecimal .= 'C';
+                            break;
+                        case 13:
+                            $hexadecimal .= 'D';
+                            break;
+                        case 14:
+                            $hexadecimal .= 'E';
+                            break;
+                        case 15:
+                            $hexadecimal .= 'F';
+                            break;
                     }
                 }
+                $count++;
             }
-            return strrev($hexadecimal);
+            return strRev($hexadecimal);
         }
         ?>
     </div>
