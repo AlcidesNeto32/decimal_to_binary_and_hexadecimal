@@ -19,10 +19,10 @@ Um conversor numérico simples, elegante e funcional desenvolvido em **PHP**, **
 
 Diferente de usar funções prontas do PHP (como `decbin()` ou `dechex()`), este projeto utiliza algoritmos de **divisões sucessivas**:
 1.  O número decimal é dividido pela base desejada (2 ou 16).
-2.  O resto da divisão é armazenado em um array.
-3.  O quociente torna-se o novo número a ser dividido.
-4.  O processo se repete até que o número chegue a zero.
-5.  O resultado final é a leitura invertida dos restos armazenados.
+2. O resto da divisão é concatenada com uma variável e amazenada na mesma. 
+3. No caso do hexadicmal segue o mesmo processo, mas com um detalhe a mais. O resto da divisão é usada para pegar um caractere numa String (de acordo com o índice) e concatená-la numa variável e amazenar o resultado na mesma.
+4. O número é divido pela base (2 ou 16) e o valor é atualizado.
+5. E o processo se repete até chegar ao número 0.
 
 ## 📋 Pré-requisitos
 
