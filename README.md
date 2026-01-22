@@ -2,20 +2,20 @@
 
 Um conversor numérico simples, elegante e funcional desenvolvido em **PHP**, **HTML5** e **CSS3**. Este projeto transforma números inteiros decimais em suas representações nas bases **Binária** e **Hexadecimal** utilizando algoritmos manuais de conversão.
 
-## 🚀 Funcionalidades
+## Funcionalidades
 
 -   **Conversão para Binário:** Transforma números decimais em sequências de 0s e 1s.
 -   **Conversão para Hexadecimal:** Transforma números decimais em base 16 (0-9, A-F).
 -   **Interface Responsiva:** Design moderno que se adapta a dispositivos móveis e desktops.
 -   **Validação de Dados:** Verifica se os campos foram preenchidos antes de realizar o cálculo.
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 -   **PHP 8+**: Lógica de processamento e algoritmos de conversão.
 -   **HTML5**: Estrutura do formulário e interface.
 -   **CSS3**: Estilização moderna (Flexbox, sombras, arredondamentos).
 
-## 💡 Como funciona a lógica?
+## Como funciona a lógica?
 
 Diferente de usar funções prontas do PHP (como `decbin()` ou `dechex()`), este projeto utiliza algoritmos de **divisões sucessivas**:
 1.  O número decimal é dividido pela base desejada (2 ou 16).
@@ -24,14 +24,14 @@ Diferente de usar funções prontas do PHP (como `decbin()` ou `dechex()`), este
 4. O número é divido pela base (2 ou 16) e o valor é atualizado.
 5. E o processo se repete até chegar ao número 0.
 
-## 📋 Pré-requisitos
+## Pré-requisitos
 
 Para rodar este projeto localmente, você precisará de um servidor PHP instalado:
 * [XAMPP](https://www.apachefriends.org/pt_br/index.html)
 * [WampServer](https://www.wampserver.com/)
 * Ou o servidor embutido do próprio PHP.
 
-## 🔧 Como Rodar o Projeto
+## Como Rodar o Projeto
 
 1.  Clone este repositório ou baixe o arquivo `.php`.
 2.  Coloque o arquivo na pasta raiz do seu servidor local (ex: `htdocs` no XAMPP).
@@ -41,7 +41,7 @@ Para rodar este projeto localmente, você precisará de um servidor PHP instalad
     http://localhost/nome-do-seu-arquivo.php
     ```
 
-## 📸 Demonstração da Interface
+## Demonstração da Interface
 
 > ![Demonstração_home_screen](img/home_screen.jpeg)
 > ![Demonstração_binario](img/binary.jpeg)
